@@ -378,33 +378,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>函数式编程是一种编程范式，它强调函数的纯粹性、不可变性和高阶函数的使用。函数式编程的核心思想是将计算过程看作是一系列函数的组合，每个函数都接受一个或多个参数，并返回一个新的值。函数式编程中的函数通常具有以下特点：</p>
+          <p><a class="internal-link" href="post/functional-programming.html">函数式编程</a>是一种编程范式，它强调函数的纯粹性、不可变性和高阶函数的使用。<a class="internal-link" href="post/functional-programming.html">函数式编程</a>的核心思想是将计算过程看作是一系列函数的组合，每个函数都接受一个或多个参数，并返回一个新的值。<a class="internal-link" href="post/functional-programming.html">函数式编程</a>中的函数通常具有以下特点：</p>
 <ul>
 <li>纯函数：函数的输出只依赖于输入，不依赖于任何外部状态，也不会修改任何外部状态。</li>
 <li>不可变性：数据结构一旦创建，就不能被修改，任何修改操作都会返回一个新的数据结构。</li>
 <li>高阶函数：函数可以作为参数传递给其他函数，也可以作为返回值返回。</li>
 </ul>
 <blockquote>
-<p>函数式编程中的常用函数包括 map、filter、reduce 等，它们都是高阶函数，可以接受其他函数作为参数。例如，下面的代码使用 map 函数将一个数组中的每个元素加 1：</p>
+<p><a class="internal-link" href="post/functional-programming.html">函数式编程</a>中的常用函数包括 map、filter、reduce 等，它们都是高阶函数，可以接受其他函数作为参数。例如，下面的代码使用 map 函数将一个数组中的每个元素加 1：</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> newArr = arr.<span class="title function_">map</span>(<span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">1</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newArr);  <span class="comment">// [2, 3, 4]</span></span><br></pre></td></tr></table></figure>
 
 <p>在这个例子中，我们使用 map 函数将数组中的每个元素加 1，得到一个新的数组 <code>[2, 3, 4]</code>。map 函数接受一个函数作为参数，这个函数接受一个参数 <code>x</code>，并返回 <code>x + 1</code>。</p>
-<p>函数式编程还有一些其他的特点，例如惰性求值、柯里化、函数组合等，这些特点都可以帮助我们编写更加简洁、可读、可维护的代码。</p>
-<p>函数式编程的优点包括：</p>
+<p><a class="internal-link" href="post/functional-programming.html">函数式编程</a>还有一些其他的特点，例如惰性求值、柯里化、函数组合等，这些特点都可以帮助我们编写更加简洁、可读、可维护的代码。</p>
+<p><a class="internal-link" href="post/functional-programming.html">函数式编程</a>的优点包括：</p>
 <ul>
-<li>可读性：函数式编程中的函数通常比较短小，只关注输入和输出，不关注函数内部的实现细节，因此代码更加易读。</li>
-<li>可维护性：函数式编程中的函数通常是纯函数，不依赖于任何外部状态，也不会修改任何外部状态，因此更加容易维护。</li>
-<li>可测试性：函数式编程中的函数通常是纯函数，只依赖于输入和输出，因此更加容易测试。</li>
-<li>可并行性：函数式编程中的函数通常是纯函数，不依赖于任何外部状态，也不会修改任何外部状态，因此更加容易并行化。</li>
+<li>可读性：<a class="internal-link" href="post/functional-programming.html">函数式编程</a>中的函数通常比较短小，只关注输入和输出，不关注函数内部的实现细节，因此代码更加易读。</li>
+<li>可维护性：<a class="internal-link" href="post/functional-programming.html">函数式编程</a>中的函数通常是纯函数，不依赖于任何外部状态，也不会修改任何外部状态，因此更加容易维护。</li>
+<li>可测试性：<a class="internal-link" href="post/functional-programming.html">函数式编程</a>中的函数通常是纯函数，只依赖于输入和输出，因此更加容易测试。</li>
+<li>可并行性：<a class="internal-link" href="post/functional-programming.html">函数式编程</a>中的函数通常是纯函数，不依赖于任何外部状态，也不会修改任何外部状态，因此更加容易并行化。</li>
 </ul>
-<p>函数式编程的缺点包括：</p>
+<p><a class="internal-link" href="post/functional-programming.html">函数式编程</a>的缺点包括：</p>
 <ul>
-<li>性能问题：函数式编程中的函数通常是纯函数，不依赖于任何外部状态，也不会修改任何外部状态，因此可能会导致性能问题。</li>
-<li>学习曲线：函数式编程中的概念比较抽象，需要一定的学习曲线。</li>
-<li>与现有代码的兼容性：函数式编程与传统的命令式编程有一定的差异，需要一定的改变现有的编程习惯。</li>
+<li>性能问题：<a class="internal-link" href="post/functional-programming.html">函数式编程</a>中的函数通常是纯函数，不依赖于任何外部状态，也不会修改任何外部状态，因此可能会导致性能问题。</li>
+<li>学习曲线：<a class="internal-link" href="post/functional-programming.html">函数式编程</a>中的概念比较抽象，需要一定的学习曲线。</li>
+<li>与现有代码的兼容性：<a class="internal-link" href="post/functional-programming.html">函数式编程</a>与传统的命令式编程有一定的差异，需要一定的改变现有的编程习惯。</li>
 </ul>
-<p>总之，函数式编程是一种强调函数的纯粹性、不可变性和高阶函数的编程范式，可以提高程序的可读性、可维护性和可测试性。函数式编程中的常用函数包括 map、filter、reduce 等，它们都是高阶函数，可以接受其他函数作为参数。虽然函数式编程有一些缺点，但它的优点远远超过了缺点，因此在现代编程中越来越受到重视。</p>
+<p>总之，<a class="internal-link" href="post/functional-programming.html">函数式编程</a>是一种强调函数的纯粹性、不可变性和高阶函数的编程范式，可以提高程序的可读性、可维护性和可测试性。<a class="internal-link" href="post/functional-programming.html">函数式编程</a>中的常用函数包括 map、filter、reduce 等，它们都是高阶函数，可以接受其他函数作为参数。虽然<a class="internal-link" href="post/functional-programming.html">函数式编程</a>有一些缺点，但它的优点远远超过了缺点，因此在现代编程中越来越受到重视。</p>
 
       
     </div>
