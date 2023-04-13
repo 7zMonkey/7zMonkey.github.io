@@ -20,20 +20,19 @@
     var CONFIG = {"hostname":"7zmonkey.tech","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="函数式编程是一种编程范式，它强调函数的纯粹性、不可变性和高阶函数的使用。函数式编程的核心思想是将计算过程看作是一系列函数的组合，每个函数都接受一个或多个参数，并返回一个新的值。函数式编程中的函数通常具有以下特点：  纯函数：函数的输出只依赖于输入，不依赖于任何外部状态，也不会修改任何外部状态。 不可变性：数据结构一旦创建，就不能被修改，任何修改操作都会返回一个新的数据结构。 高阶函数：函数可以作为">
+  <meta name="description" content="柯里化（Currying）是一种函数式编程技术，它将接受多个参数的函数转换为一系列接受单个参数的函数。柯里化可以使函数更加灵活和可复用，并且可以方便地进行部分应用和函数组合。 在柯里化中，一个接受多个参数的函数被转换为一个接受单个参数的函数序列。每个单参数函数都返回一个新的单参数函数，直到所有参数都被收集完毕，最后返回函数的结果。例如，以下是一个将接受两个参数的函数柯里化的示例代码： 123456">
 <meta property="og:type" content="article">
-<meta property="og:title" content="函数式编程">
-<meta property="og:url" content="https://7zmonkey.tech/post/functional-programming.html">
+<meta property="og:title" content="currying">
+<meta property="og:url" content="https://7zmonkey.tech/post/currying.html">
 <meta property="og:site_name" content="7zMonkey Blog">
-<meta property="og:description" content="函数式编程是一种编程范式，它强调函数的纯粹性、不可变性和高阶函数的使用。函数式编程的核心思想是将计算过程看作是一系列函数的组合，每个函数都接受一个或多个参数，并返回一个新的值。函数式编程中的函数通常具有以下特点：  纯函数：函数的输出只依赖于输入，不依赖于任何外部状态，也不会修改任何外部状态。 不可变性：数据结构一旦创建，就不能被修改，任何修改操作都会返回一个新的数据结构。 高阶函数：函数可以作为">
+<meta property="og:description" content="柯里化（Currying）是一种函数式编程技术，它将接受多个参数的函数转换为一系列接受单个参数的函数。柯里化可以使函数更加灵活和可复用，并且可以方便地进行部分应用和函数组合。 在柯里化中，一个接受多个参数的函数被转换为一个接受单个参数的函数序列。每个单参数函数都返回一个新的单参数函数，直到所有参数都被收集完毕，最后返回函数的结果。例如，以下是一个将接受两个参数的函数柯里化的示例代码： 123456">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-12T08:59:48.000Z">
-<meta property="article:modified_time" content="2023-04-13T06:13:19.889Z">
+<meta property="article:published_time" content="2023-04-13T06:11:16.000Z">
+<meta property="article:modified_time" content="2023-04-13T06:12:11.859Z">
 <meta property="article:author" content="7zMonkey">
-<meta property="article:tag" content="functional-programming">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://7zmonkey.tech/post/functional-programming.html">
+<link rel="canonical" href="https://7zmonkey.tech/post/currying.html">
 
 
 <script id="page-configurations">
@@ -46,7 +45,7 @@
   };
 </script>
 
-  <title>函数式编程 | 7zMonkey Blog</title>
+  <title>currying | 7zMonkey Blog</title>
   
 
 
@@ -151,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
-    <link itemprop="mainEntityOfPage" href="https://7zmonkey.tech/post/functional-programming.html">
+    <link itemprop="mainEntityOfPage" href="https://7zmonkey.tech/post/currying.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          函数式编程
+          currying
         </h1>
 
         <div class="post-meta">
@@ -173,19 +172,13 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2023-04-12 16:59:48" itemprop="dateCreated datePublished" datetime="2023-04-12T16:59:48+08:00">2023-04-12</time>
+              <time title="Created: 2023-04-13 14:11:16 / Modified: 14:12:11" itemprop="dateCreated datePublished" datetime="2023-04-13T14:11:16+08:00">2023-04-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-04-13 14:13:19" itemprop="dateModified" datetime="2023-04-13T14:13:19+08:00">2023-04-13</time>
-              </span>
 
           
-            <div class="post-description"> 内容由 <b>AI GPT 3.5</b> 生成</div>
+            <div class="post-description"> 内容由 <b>AI GPT-3.5</b> 生成</div>
         </div>
       </header>
 
@@ -195,33 +188,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>函数式编程是一种编程范式，它强调函数的纯粹性、不可变性和高阶函数的使用。函数式编程的核心思想是将计算过程看作是一系列函数的组合，每个函数都接受一个或多个参数，并返回一个新的值。函数式编程中的函数通常具有以下特点：</p>
-<ul>
-<li>纯函数：函数的输出只依赖于输入，不依赖于任何外部状态，也不会修改任何外部状态。</li>
-<li>不可变性：数据结构一旦创建，就不能被修改，任何修改操作都会返回一个新的数据结构。</li>
-<li>高阶函数：函数可以作为参数传递给其他函数，也可以作为返回值返回。</li>
-</ul>
-<blockquote>
-<p>函数式编程中的常用函数包括 map、filter、reduce 等，它们都是高阶函数，可以接受其他函数作为参数。例如，下面的代码使用 map 函数将一个数组中的每个元素加 1：</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> newArr = arr.<span class="title function_">map</span>(<span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">1</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newArr);  <span class="comment">// [2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+        <p>柯里化（Currying）是一种函数式编程技术，它将接受多个参数的函数转换为一系列接受单个参数的函数。柯里化可以使函数更加灵活和可复用，并且可以方便地进行部分应用和函数组合。</p>
+<p>在柯里化中，一个接受多个参数的函数被转换为一个接受单个参数的函数序列。每个单参数函数都返回一个新的单参数函数，直到所有参数都被收集完毕，最后返回函数的结果。例如，以下是一个将接受两个参数的函数柯里化的示例代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">x, y</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">curryAdd</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">y</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">add</span>(x, y);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> add5 = <span class="title function_">curryAdd</span>(<span class="number">5</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add5</span>(<span class="number">3</span>)); <span class="comment">// 8</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add5</span>(<span class="number">7</span>)); <span class="comment">// 12</span></span><br></pre></td></tr></table></figure>
 
-<p>在这个例子中，我们使用 map 函数将数组中的每个元素加 1，得到一个新的数组 <code>[2, 3, 4]</code>。map 函数接受一个函数作为参数，这个函数接受一个参数 <code>x</code>，并返回 <code>x + 1</code>。</p>
-<p>函数式编程还有一些其他的特点，例如惰性求值、<a href="/post/currying.html">柯里化</a>、函数组合等，这些特点都可以帮助我们编写更加简洁、可读、可维护的代码。</p>
-<p>函数式编程的优点包括：</p>
-<ul>
-<li>可读性：函数式编程中的函数通常比较短小，只关注输入和输出，不关注函数内部的实现细节，因此代码更加易读。</li>
-<li>可维护性：函数式编程中的函数通常是纯函数，不依赖于任何外部状态，也不会修改任何外部状态，因此更加容易维护。</li>
-<li>可测试性：函数式编程中的函数通常是纯函数，只依赖于输入和输出，因此更加容易测试。</li>
-<li>可并行性：函数式编程中的函数通常是纯函数，不依赖于任何外部状态，也不会修改任何外部状态，因此更加容易并行化。</li>
-</ul>
-<p>函数式编程的缺点包括：</p>
-<ul>
-<li>性能问题：函数式编程中的函数通常是纯函数，不依赖于任何外部状态，也不会修改任何外部状态，因此可能会导致性能问题。</li>
-<li>学习曲线：函数式编程中的概念比较抽象，需要一定的学习曲线。</li>
-<li>与现有代码的兼容性：函数式编程与传统的命令式编程有一定的差异，需要一定的改变现有的编程习惯。</li>
-</ul>
-<p>总之，函数式编程是一种强调函数的纯粹性、不可变性和高阶函数的编程范式，可以提高程序的可读性、可维护性和可测试性。函数式编程中的常用函数包括 map、filter、reduce 等，它们都是高阶函数，可以接受其他函数作为参数。虽然函数式编程有一些缺点，但它的优点远远超过了缺点，因此在现代编程中越来越受到重视。</p>
+<p>在这个示例中，我们定义了一个接受两个参数的函数<code>add</code>，并将其转换为一个接受单个参数的函数序列。我们定义了一个名为<code>curryAdd</code>的函数，它接受一个参数<code>x</code>，并返回一个新的函数，该函数接受一个参数<code>y</code>，并返回<code>add(x, y)</code>的结果。然后，我们使用<code>curryAdd</code>函数将<code>add</code>函数柯里化，并将其保存为<code>add5</code>函数。最后，我们使用<code>add5</code>函数来计算5加上3和7的结果。</p>
+<p>柯里化可以使函数更加灵活和可复用。例如，我们可以使用柯里化来创建通用的函数，然后使用部分应用来创建特定的函数。以下是一个使用柯里化和部分应用的示例代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">multiply</span>(<span class="params">x, y</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">curryMultiply</span> = x =&gt; <span class="function"><span class="params">y</span> =&gt;</span> <span class="title function_">multiply</span>(x, y);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> double = <span class="title function_">curryMultiply</span>(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">const</span> triple = <span class="title function_">curryMultiply</span>(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">double</span>(<span class="number">5</span>)); <span class="comment">// 10</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">triple</span>(<span class="number">5</span>)); <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，我们定义了一个接受两个参数的函数<code>multiply</code>，并将其转换为一个接受单个参数的函数序列。然后，我们使用柯里化将<code>multiply</code>函数转换为一个接受单个参数的函数序列，并将其保存为<code>curryMultiply</code>函数。最后，我们使用<code>curryMultiply</code>函数来创建一个<code>double</code>函数和一个<code>triple</code>函数，它们分别将其参数乘以2和3。</p>
 
     </div>
 
@@ -230,20 +205,17 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/functional-programming/" rel="tag"># functional-programming</a>
-          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/post/currying.html" rel="next" title="currying">
-      currying <i class="fa fa-chevron-right"></i>
+    <a href="/post/functional-programming.html" rel="prev" title="函数式编程">
+      <i class="fa fa-chevron-left"></i> 函数式编程
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
