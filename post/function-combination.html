@@ -404,8 +404,8 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   NexT.utils.getScript('//cdn.bootcdn.net/ajax/libs/gitalk/1.8.0/gitalk.min.js', () => {
     var gitalk = new Gitalk({
       proxy       : 'http://proxy.onemue.cn/',
-      clientID    : '',
-      clientSecret: '',
+      clientID    : '577a48ff45e875186c49',
+      clientSecret: '7fffa97c44fac8f7aeb2f3044747848da7e5c50c',
       repo        : '7zMonkey.github.io',
       owner       : '7zMonkey',
       admin       : ['7zMonkey'],
@@ -413,6 +413,8 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
         language: 'zh-CN',
       distractionFreeMode: true
     });
+
+    console.log('558002e2-9e68-eff1-53ef-7708226314d6')
     gitalk.render('gitalk-container');
   }, window.Gitalk);
 });
