@@ -145,6 +145,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://7zmonkey.tech/post/function-execution-context.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="7zMonkey">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="7zMonkey Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/function-execution-context.html" class="post-title-link" itemprop="url">function-execution-context</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-14 09:18:55 / Modified: 09:19:58" itemprop="dateCreated datePublished" datetime="2023-04-14T09:18:55+08:00">2023-04-14</time>
+            </span>
+
+          
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>函数执行上下文是指在函数执行期间，JavaScript 引擎创建的一个内部数据结构，用于存储函数执行时的环境信息，包括函数的参数、变量、作用域链、this 等信息。每当函数被调用时，都会创建一个新的执行上下文，并将其压入执行上下文栈中，当函数执行完毕后，执行上下文会被弹出栈。</p>
+<p>函数执行上下文包括以下几个部分：</p>
+<ol>
+<li><p>变量对象（Variable Object）：用于存储函数内部的变量和函数声明，包括函数的参数、局部变量、内部函数等。在函数执行前，JavaScript 引擎会先创建一个变量对象，并将其初始化为一个空对象，然后将函数的参数和函数声明添加到变量对象中。</p>
+</li>
+<li><p>作用域链（Scope Chain）：用于解析变量和函数的作用域，它是一个由多个执行上下文的变量对象组成的链表结构，每个执行上下文都有一个指向父级执行上下文的指针，通过这个指针可以访问父级执行上下文的变量对象。</p>
+</li>
+<li><p>this 值：用于指定函数执行时的上下文对象，它的值取决于函数的调用方式，可以是全局对象、对象方法、构造函数等。</p>
+</li>
+</ol>
+<p>函数执行上下文的创建过程可以分为以下几个步骤：</p>
+<ol>
+<li><p>创建变量对象，并将其初始化为一个空对象。</p>
+</li>
+<li><p>将函数的参数和函数声明添加到变量对象中。</p>
+</li>
+<li><p>创建作用域链，将当前执行上下文的变量对象添加到作用域链的头部，然后将父级执行上下文的作用域链添加到当前作用域链的尾部。</p>
+</li>
+<li><p>确定 this 值，它的值取决于函数的调用方式。</p>
+</li>
+<li><p>执行函数体内的代码。</p>
+</li>
+</ol>
+<p>函数执行上下文是 JavaScript 中非常重要的概念，它决定了函数内部变量和函数的作用域，理解函数执行上下文的创建过程和作用可以帮助我们更好地理解 JavaScript 中的作用域、闭包、this 等概念。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
     <link itemprop="mainEntityOfPage" href="https://7zmonkey.tech/post/apply-bind-call-differences.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -242,10 +323,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-04-13 17:17:02 / Modified: 17:30:38" itemprop="dateCreated datePublished" datetime="2023-04-13T17:17:02+08:00">2023-04-13</time>
+              <time title="Created: 2023-04-13 17:17:02" itemprop="dateCreated datePublished" datetime="2023-04-13T17:17:02+08:00">2023-04-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-04-14 09:19:51" itemprop="dateModified" datetime="2023-04-14T09:19:51+08:00">2023-04-14</time>
+              </span>
 
           
         </div>
@@ -508,7 +595,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-04-13 16:17:32" itemprop="dateModified" datetime="2023-04-13T16:17:32+08:00">2023-04-13</time>
+                <time title="Modified: 2023-04-14 09:20:26" itemprop="dateModified" datetime="2023-04-14T09:20:26+08:00">2023-04-14</time>
               </span>
 
           
@@ -629,12 +716,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
