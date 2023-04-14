@@ -398,6 +398,7 @@
 NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   NexT.utils.getScript('//cdn.bootcdn.net/ajax/libs/gitalk/1.8.0/gitalk.min.js', () => {
     var gitalk = new Gitalk({
+      proxy       : 'http://proxy.onemue.cn/',
       clientID    : '',
       clientSecret: '',
       repo        : '7zMonkey.github.io',
