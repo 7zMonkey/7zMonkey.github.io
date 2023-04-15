@@ -145,6 +145,73 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://www.7zmonkey.tech/post/split-join-replace.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="7zMonkey">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="7zMonkey Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/split-join-replace.html" class="post-title-link" itemprop="url">使用split+join优化replace</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-15 18:36:44 / Modified: 19:01:15" itemprop="dateCreated datePublished" datetime="2023-04-15T18:36:44+08:00">2023-04-15</time>
+            </span>
+
+          
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>在昨天晚上使用ChatGPT优化代码的时候，ChatGPT给了我一个优化方案　”主要的优化是使用 <code>split</code> 和 <code>join</code> 方法来替换字符串，而不是使用 <code>replace</code> 方法。这样可以避免在循环中多次调用 <code>replace</code> 方法，提高代码效率。”　当我看到这个方案是表示大为震惊，进入还可以通过这样的方式优化代码，随后向他询问了二者的效率，果然split+join的效率是更胜一筹的。</p>
+</blockquote>
+<p>这将是一个很简单的示例代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Ai 共创</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;This is a test string for replace and split join methods. We will replace all occurrences of the word &quot;replace&quot; with the word &quot;split join&quot;.&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> regex = <span class="regexp">/replace/g</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&#x27;replace[正则]&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> newStr1 = str.<span class="title function_">replace</span>(regex, <span class="string">&#x27;split join&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&#x27;replace[正则]&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&#x27;replace[字符串]&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> newStr2 = str.<span class="title function_">replace</span>(<span class="string">&#x27;replace&#x27;</span>, <span class="string">&#x27;split join&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&#x27;replace[字符串]&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&#x27;split+join[正则]&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> newStr3 = str.<span class="title function_">split</span>(regex).<span class="title function_">join</span>(<span class="string">&#x27;split join&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&#x27;split+join[正则]&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&#x27;split+join[字符串]&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> newStr4 = str.<span class="title function_">split</span>(<span class="string">&#x27;replace&#x27;</span>).<span class="title function_">join</span>(<span class="string">&#x27;split join&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&#x27;split+join[字符串]&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newStr1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newStr2);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newStr3);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newStr4);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// replace[正则]: 0.005126953125 ms</span></span><br><span class="line"><span class="comment">// replace[字符串]: 0.001953125 ms</span></span><br><span class="line"><span class="comment">// split+join[正则]: 0.0048828125 ms</span></span><br><span class="line"><span class="comment">// split+join[字符串]: 0.02392578125 ms</span></span><br><span class="line"><span class="comment">// This is a test string for split join and split join methods. We will split join all occurrences of the word &quot;split join&quot; with the word &quot;split join&quot;.</span></span><br><span class="line"><span class="comment">// This is a test string for split join and split join methods. We will replace all occurrences of the word &quot;replace&quot; with the word &quot;split join&quot;.</span></span><br><span class="line"><span class="comment">// This is a test string for split join and split join methods. We will split join all occurrences of the word &quot;split join&quot; with the word &quot;split join&quot;.</span></span><br><span class="line"><span class="comment">// This is a test string for split join and split join methods. We will split join all occurrences of the word &quot;split join&quot; with the word &quot;split join&quot;.</span></span><br></pre></td></tr></table></figure>
+
+<p>分析运行结果, 通过正则作为split的分隔符是执行时间最短, 使用字符串作为分隔符时执行时间最长, 但是多次执行发现**replace[正则]<strong>也有概率会比</strong>split+join[正则]**执行时间段,更何况只是相差不足1ms, 效率优化没有必要性, 而且还会增加代码不易读性, 所以这样的优化是没必要的, 至少是现在没必要.</p>
+<p>当然ChatGPT也给出了一些新的探索方向. </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
     <link itemprop="mainEntityOfPage" href="https://www.7zmonkey.tech/post/why.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -803,12 +870,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
