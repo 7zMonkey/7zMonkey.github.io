@@ -145,6 +145,77 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://www.7zmonkey.tech/post/vue2-use-vite.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="7zMonkey">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="7zMonkey Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/vue2-use-vite.html" class="post-title-link" itemprop="url">如何在vue2.x中使用vite</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-17 00:01:22 / Modified: 00:26:07" itemprop="dateCreated datePublished" datetime="2023-04-17T00:01:22+08:00">2023-04-17</time>
+            </span>
+
+          
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>这里的vue 2.x指的是vue 2.7以下,vue 2.7， 可以使用 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@vitejs/plugin-vue2">vite 官方插件</a></p>
+</blockquote>
+<p>长话短说，vue2.x中使用vite的简单方法是借助vite插件“<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/vite-plugin-vue2">vite-plugin-vue2</a>”，具体实现原理还没有研究，晚上看了一下可行性，目前来说是可行的。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>所以决定记录一下，目前只是简单的说明记录一下步骤，后续将会重新完善此文。</p>
+<ol>
+<li>首先，安装<code>vite</code>在项目目录下，并且添加配置文件<code>vite.config.js</code>。</li>
+<li>其次，通过命令<code>npm install vite-plugin-vue2 -D</code>安装插件<code>vite-plugin-vue2</code>.</li>
+<li>再次，修改<code>vite.config.js</code>配置文件为如下内容（本文结尾）。</li>
+<li>然后， 需要在<code>package.json</code>中追加<code>npm run</code>的配置信息，也就是<code>scripts</code>项，配置值为<code>vite</code>即可。</li>
+<li>最后，使用<code>npm run dev</code>启动项目（<code>package.json</code>配置项（<code>scripts</code>）包含<code>&quot;dev&quot;: &quot;vite&quot;</code>）。</li>
+</ol>
+<h2 id="vite-config-js配置信息"><a href="#vite-config-js配置信息" class="headerlink" title="vite.config.js配置信息"></a><code>vite.config.js</code>配置信息</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@type</span> &#123;<span class="type">import(&#x27;vite&#x27;).UserConfig</span>&#125; */</span></span><br><span class="line"><span class="keyword">import</span> &#123; createVuePlugin &#125; <span class="keyword">from</span> <span class="string">&#x27;vite-plugin-vue2&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">optimizeDeps</span>: &#123;</span><br><span class="line">    <span class="attr">include</span>: [</span><br><span class="line">      <span class="string">&#x27;vue&#x27;</span>,</span><br><span class="line"><span class="comment">//    &#x27;vue-router&#x27;,</span></span><br><span class="line"><span class="comment">//    &#x27;vuex&#x27;</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="title function_">createVuePlugin</span>(<span class="comment">/* options */</span>)</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
     <link itemprop="mainEntityOfPage" href="https://www.7zmonkey.tech/post/split-join-replace.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -879,12 +950,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
